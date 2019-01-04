@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background-color: #FFFFFF;
-$font-color: #dfdfdf;
+$background-color: #fff;
+$font-color: #000;
 $white: #fff;
 $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
@@ -9,6 +9,8 @@ $black: #000;
 
 body {
   background-color: $background-color;
+  font-size: 36px;
+  font-weight: 800;
 }
 
 .box {
