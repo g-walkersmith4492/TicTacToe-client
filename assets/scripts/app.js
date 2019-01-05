@@ -16,4 +16,5 @@ $(() => {
   $('#box7').on('click', events.clickBoxSeven)
   $('#box8').on('click', events.clickBoxEight)
   $('#box9').on('click', events.clickBoxNine)
+  $('#refresh').on('click', events.refreshGame)
 })

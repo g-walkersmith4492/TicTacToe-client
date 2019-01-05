@@ -1,7 +1,69 @@
-const playerMoves = [null, null, null, null, null, null, null, null, null]
+// board array which stores player moves and sends to API
+let playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 const playerOne = 'X'
 const playerTwo = 'O'
+let gameWinner= null
+
+// variable is used to store previous moves in order to alternate between X and O
 let lastMove = null
+
+// This is the function for the resfresh button, which clears the board
+const refreshGame = function () {
+  $('.box').html('')
+  playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  lastMove = null
+}
+
+// This is the code to determine who has one the game
+if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+} else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+  alert('Player One has won the game!')
+  gameWinner = playerOne
+} else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+  alert('Player two has won the game!')
+  gameWinner = playerTwo
+}
 
 const clickBoxOne = $('#box1').on('click', function (event) {
   if ($('#box1').html() === '') {
@@ -16,6 +78,42 @@ const clickBoxOne = $('#box1').on('click', function (event) {
       console.log(playerMoves)
       lastMove = playerOne
     }
+  }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
   }
 })
 const clickBoxTwo = $('#box2').on('click', function (event) {
@@ -32,7 +130,44 @@ const clickBoxTwo = $('#box2').on('click', function (event) {
       lastMove = playerOne
     }
   }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
+
 const clickBoxThree = $('#box3').on('click', function (event) {
   if ($('#box3').html() === '') {
     if (lastMove === playerOne) {
@@ -46,6 +181,42 @@ const clickBoxThree = $('#box3').on('click', function (event) {
       console.log(playerMoves)
       lastMove = playerOne
     }
+  }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
   }
 })
 const clickBoxFour = $('#box4').on('click', function (event) {
@@ -62,6 +233,9 @@ const clickBoxFour = $('#box4').on('click', function (event) {
       lastMove = playerOne
     }
   }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
 const clickBoxFive = $('#box5').on('click', function (event) {
   if ($('#box5').html() === '') {
@@ -77,6 +251,42 @@ const clickBoxFive = $('#box5').on('click', function (event) {
       lastMove = playerOne
     }
   }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
 const clickBoxSix = $('#box6').on('click', function (event) {
   if ($('#box6').html() === '') {
@@ -89,11 +299,14 @@ const clickBoxSix = $('#box6').on('click', function (event) {
       (event.target).append(playerOne)
       playerMoves[5] = playerOne
       console.log(playerMoves)
-
       lastMove = playerOne
     }
   }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
+
 const clickBoxSeven = $('#box7').on('click', function (event) {
   if ($('#box7').html() === '') {
     if (lastMove === playerOne) {
@@ -108,7 +321,44 @@ const clickBoxSeven = $('#box7').on('click', function (event) {
       lastMove = playerOne
     }
   }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
+
 const clickBoxEight = $('#box8').on('click', function (event) {
   if ($('#box8').html() === '') {
     if (lastMove === playerOne) {
@@ -123,7 +373,44 @@ const clickBoxEight = $('#box8').on('click', function (event) {
       lastMove = playerOne
     }
   }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
+
 const clickBoxNine = $('#box9').on('click', function (event) {
   if ($('#box9').html() === '') {
     if (lastMove === playerOne) {
@@ -138,6 +425,42 @@ const clickBoxNine = $('#box9').on('click', function (event) {
       lastMove = playerOne
     }
   }
+  if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[4] === 'O' && playerMoves[4] === 'O' && playerMoves[5] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[6] === 'X' && playerMoves[7] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[6] === 'O' && playerMoves[7] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[3] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[3] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[1] === 'X' && playerMoves[4] === 'X' && playerMoves[7] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[1] === 'O' && playerMoves[4] === 'O' && playerMoves[7] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[5] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[5] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[0] === 'X' && playerMoves[4] === 'X' && playerMoves[8] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[0] === 'O' && playerMoves[4] === 'O' && playerMoves[8] === 'O') {
+    alert('Player two has won the game!')
+  } else if (playerMoves[2] === 'X' && playerMoves[4] === 'X' && playerMoves[6] === 'X') {
+    alert('Player One has won the game!')
+  } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
+    alert('Player two has won the game!')
+  }
+  if (playerMoves.includes(0) === false) {
+    alert('The game is a DRAW!')
+  }
 })
 
 module.exports = {
@@ -149,5 +472,7 @@ module.exports = {
   clickBoxSix: clickBoxSix,
   clickBoxSeven: clickBoxSeven,
   clickBoxEight: clickBoxEight,
-  clickBoxNine: clickBoxNine
+  clickBoxNine: clickBoxNine,
+  refreshGame: refreshGame,
+  playerMoves: playerMoves
 }
