@@ -1,6 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 
 // Below is the function to sign up for the game
 const onSignUp = (event) => {
@@ -50,7 +51,7 @@ const onSignOut = (event) => {
 const onCreateGame = (event) => {
   event.preventDefault()
   console.log('You have created a game!')
-  api.createGame()
+  api.createGame(playerMoves)
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
@@ -58,19 +59,8 @@ const onCreateGame = (event) => {
 const onGetGames = (event) => {
   event.preventDefault()
   api.getGames()
-    .then(ui.onGetExampleSuccess)
-    .catch(ui.onGetExampleFailure)
-}
-
-const onSubmitTurn = (event) => {
-  event.preventDefault()
-  console.log('You have submited a ')
-  const formData = getFormFields(event.target)
-  console.log(formData)
-  api.changePassword(formData)
-    .then(ui.onChangePasswordSuccess)
-    .catch(ui.onChangePasswordFailure)
-  $('changepasswordform').trigger('reset')
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
 }
 
 // board array which stores player moves and sends to API
@@ -140,10 +130,18 @@ const clickBoxOne = $('#box1').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[0] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 0
+        const playerGameCharacter = 'x'
+        const isOver = false
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[0] = playerOne
         lastMove = playerOne
+        const playerMoveData = 0
+        const playerGameCharacter = 'x'
+        const isOver = false
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
     }
     checkWinner()
@@ -159,6 +157,7 @@ const clickBoxTwo = $('#box2').on('click', function (event) {
       if (lastMove === playerOne) {
         (event.target).append(playerTwo)
         playerMoves[1] = playerTwo
+        onCreateMove()
 
         lastMove = playerTwo
       } else {
@@ -314,6 +313,24 @@ const clickBoxNine = $('#box9').on('click', function (event) {
   }
 })
 
+const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
+  console.log(isOver)
+  console.log('You Have Created a Move!')
+  const data =
+    {
+      'game': {
+        'cell': {
+          'index': playerMoveData,
+          'value': playerGameCharacter
+        },
+        'over': isOver
+      }
+    }
+  console.log(data)
+  api.updateGame(data)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
 module.exports = {
   clickBoxOne: clickBoxOne,
   clickBoxTwo: clickBoxTwo,
@@ -330,5 +347,6 @@ module.exports = {
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
   onCreateGame: onCreateGame,
-  onGetGames: onGetGames
+  onGetGames: onGetGames,
+  onCreateMove: onCreateMove
 }

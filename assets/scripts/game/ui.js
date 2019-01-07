@@ -40,8 +40,8 @@ const onSignOutFailure = () => {
 }
 
 const onCreateGameSuccess = (responseData) => {
-  $('#user-message').text('You have successfully created an example!!').css('color', 'green')
   console.log(responseData)
+  store.game = responseData.game
 }
 
 const onCreateGameFailure = () => {
@@ -49,11 +49,19 @@ const onCreateGameFailure = () => {
 }
 
 const onGetGamesSuccess = (responseData) => {
-  $('#user-message').text('You have played some games').css('color', 'red')
+  console.log(responseData)
 }
 
 const onGetGamesFailure = () => {
   $('#user-message').text('Error').css('color', 'red')
+}
+
+const onUpdateGameSuccess = (responseData) => {
+  console.log('Created Move!')
+}
+
+const onUpdateGameFailure = () => {
+  console.log('Failure to create move!')
 }
 
 module.exports = {
@@ -68,6 +76,8 @@ module.exports = {
   onCreateGameSuccess: onCreateGameSuccess,
   onCreateGameFailure: onCreateGameFailure,
   onGetGamesSuccess: onGetGamesSuccess,
-  onGetGamesFailure: onGetGamesFailure
+  onGetGamesFailure: onGetGamesFailure,
+  onUpdateGameSuccess: onUpdateGameSuccess,
+  onUpdateGameFailure: onUpdateGameFailure
 
 }
