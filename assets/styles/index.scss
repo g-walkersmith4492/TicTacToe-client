@@ -18,6 +18,10 @@ h1 {
   text-align: center;
 }
 
+.displaywinner {
+  color: black;
+}
+
 h2 {
   text-align: center;
   color: green;
@@ -26,6 +30,11 @@ h2 {
 .buttons {
   text-align: center;
   margin-top: 20px;
+}
+
+.signout {
+  margin: 20px auto;
+  font-size: 18px;
 }
 
 .box {
@@ -43,4 +52,35 @@ h2 {
 
 .teal {
   background-color: $teal;
+}
+
+.signupform {
+  height: 400px;
+  width: 400px;
+  font-size: 12px;
+  margin: 20px auto;
+  border: 1px solid $black;
+  padding: 10px
+}
+
+.signinform {
+  height: 400px;
+  width: 400px;
+  font-size: 12px;
+  margin: 20px auto;
+  border: 1px solid $black;
+  padding: 10px
+}
+
+.changepasswordform {
+  height: 400px;
+  width: 400px;
+  font-size: 12px;
+  margin: 20px auto;
+  border: 1px solid $black;
+  padding: 10px
+}
+
+#signout {
+  margin: 20px auto;
 }

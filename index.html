@@ -13,7 +13,75 @@
     </head>
     <body>
       <h1>Greg's Tic Tac Toe</h1>
-      <h1 class="displaywinner">Good Luck!</h2>
+      <h1 class="displaywinner">Good Luck!</h1>
+      <div class="signupdiv">
+      <form class="signupform">
+  <div class="form-group">
+    <label for="exampleInputEmailSignUp1">Email address</label>
+    <input type="email" class="form-control" name="credentials[email]" id="exampleInputEmailSignIn1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPasswordSignUp1">Password</label>
+    <input type="password" class="form-control" name="credentials[password]" id="exampleInputPasswordSignIn1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleConfirmPassword1">Confirm Password</label>
+    <input type="passworconfirm" class="form-control" name="credentials[password_confirmation]" id="exampleConfirmationPassword1" placeholder="Password Confirmation">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submitbutton" class="btn btn-default">Submit</button>
+</form>
+</div>
+<div class="signindiv">
+<form class="signinform">
+<div class="form-group">
+<label for="exampleInputEmailSignIn1">Email address</label>
+<input type="email" class="form-control" name="credentials[email]" id="exampleInputEmailSignUp1" placeholder="Email">
+</div>
+<div class="form-group">
+<label for="exampleInputPasswordSignIn1">Password</label>
+<input type="password" class="form-control" name="credentials[password]" id="exampleInputPasswordSignUp1" placeholder="Password">
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox"> Check me out
+</label>
+</div>
+<button type="submitbutton" class="btn btn-default">Submit</button>
+</form>
+</div>
+<div class="changepassworddiv">
+<form class="changepasswordform">
+<div class="form-group">
+<label for="exampleInputEmailSignIn1">Old Password</label>
+<input type="password" class="form-control" name="passwords[old]" id="exampleIChangePasswordOld1" placeholder="Old Password">
+</div>
+<div class="form-group">
+<label for="exampleInputPasswordSignIn1">New Password</label>
+<input type="password" class="form-control" name="passwords[new]" id="exampleChangePasswordNewUp1" placeholder="New Password">
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox"> Check me out
+</label>
+</div>
+<button type="submitbutton" class="btn btn-default">Submit</button>
+</form>
+</div>
+<div class="signoutdiv">
+<button type="button" id="signout">Sign Out</button>
+</div>
+<div class="creategamediv">
+<button type="button" id="creategame">Start Game!</button>
+</div>
+<div class="getgamesdiv">
+<button type="button" id="getgames">Your Game History!!</button>
+</div>
+  <h1 #class="user-message"></h1>
   <div class="container">
     <div class="row">
       <div id = "box1" class="col-4 box blue"></div>
