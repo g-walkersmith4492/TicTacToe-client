@@ -54,6 +54,11 @@ const onCreateGame = (event) => {
   api.createGame(playerMoves)
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
+  $('.box').html('')
+  playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  lastMove = null
+  gameWinner = null
+  $('.displaywinner').html('New Game!!').css('color', 'black')
 }
 
 const onGetGames = (event) => {
@@ -71,15 +76,24 @@ let gameWinner = null
 
 // variable is used to store previous moves in order to alternate between X and O
 let lastMove = null
+let isOver = false
+
+const isGameOver = function () {
+  if (gameWinner !== null || playerMoves.includes(0) === false) {
+    isOver = true
+  } else {
+    isOver = false
+  } console.log(isOver)
+}
 
 // This is the function for the resfresh button, which clears the board
-const refreshGame = function () {
-  $('.box').html('')
-  playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-  lastMove = null
-  gameWinner = null
-  $('.displaywinner').html('New Game!!').css('color', 'black')
-}
+// const refreshGame = function () {
+//   $('.box').html('')
+//   playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+//   lastMove = null
+//   gameWinner = null
+//   $('.displaywinner').html('New Game!!').css('color', 'black')
+// }
 
 // This is the code to determine who has one the game
 const checkWinner = function () {
@@ -120,6 +134,10 @@ const checkWinner = function () {
     $('.displaywinner').html('Player One Wins!').css('color', 'green')
   } else if (gameWinner === playerTwo) {
     $('.displaywinner').html('Player Two Wins!').css('color', 'blue')
+  } if (gameWinner !== null || playerMoves.includes(0) === false) {
+    isOver = true
+  } else {
+    isOver = false
   }
 }
 
@@ -131,8 +149,8 @@ const clickBoxOne = $('#box1').on('click', function (event) {
         playerMoves[0] = playerTwo
         lastMove = playerTwo
         const playerMoveData = 0
-        const playerGameCharacter = 'x'
-        const isOver = false
+        const playerGameCharacter = 'o'
+        checkWinner()
         onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
@@ -140,13 +158,9 @@ const clickBoxOne = $('#box1').on('click', function (event) {
         lastMove = playerOne
         const playerMoveData = 0
         const playerGameCharacter = 'x'
-        const isOver = false
+        checkWinner()
         onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false && gameWinner === null) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -157,18 +171,21 @@ const clickBoxTwo = $('#box2').on('click', function (event) {
       if (lastMove === playerOne) {
         (event.target).append(playerTwo)
         playerMoves[1] = playerTwo
-        onCreateMove()
-
         lastMove = playerTwo
+        const playerMoveData = 1
+        const playerGameCharacter = 'o'
+        checkWinner()
+        isGameOver()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[1] = playerOne
         lastMove = playerOne
+        const playerMoveData = 1
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -180,15 +197,19 @@ const clickBoxThree = $('#box3').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[2] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 2
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[2] = playerOne
         lastMove = playerOne
+        const playerMoveData = 2
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -200,15 +221,19 @@ const clickBoxFour = $('#box4').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[3] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 3
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[3] = playerOne
         lastMove = playerOne
+        const playerMoveData = 3
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -220,15 +245,19 @@ const clickBoxFive = $('#box5').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[4] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 4
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[4] = playerOne
         lastMove = playerOne
+        const playerMoveData = 4
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -240,15 +269,19 @@ const clickBoxSix = $('#box6').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[5] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 5
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[5] = playerOne
         lastMove = playerOne
+        const playerMoveData = 5
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -260,15 +293,19 @@ const clickBoxSeven = $('#box7').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[6] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 6
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[6] = playerOne
         lastMove = playerOne
+        const playerMoveData = 6
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -280,15 +317,19 @@ const clickBoxEight = $('#box8').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[7] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 7
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[7] = playerOne
         lastMove = playerOne
+        const playerMoveData = 7
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -300,15 +341,19 @@ const clickBoxNine = $('#box9').on('click', function (event) {
         (event.target).append(playerTwo)
         playerMoves[8] = playerTwo
         lastMove = playerTwo
+        const playerMoveData = 8
+        const playerGameCharacter = 'o'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       } else {
         (event.target).append(playerOne)
         playerMoves[8] = playerOne
         lastMove = playerOne
+        const playerMoveData = 8
+        const playerGameCharacter = 'x'
+        checkWinner()
+        onCreateMove(playerMoveData, playerGameCharacter, isOver)
       }
-    }
-    checkWinner()
-    if (playerMoves.includes(0) === false) {
-      $('.displaywinner').html('The Game is a DRAW!!!').css('color', 'red')
     }
   }
 })
@@ -341,7 +386,7 @@ module.exports = {
   clickBoxSeven: clickBoxSeven,
   clickBoxEight: clickBoxEight,
   clickBoxNine: clickBoxNine,
-  refreshGame: refreshGame,
+  // refreshGame: refreshGame,
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
