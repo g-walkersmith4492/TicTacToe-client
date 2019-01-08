@@ -12,9 +12,16 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Greg's Tic Tac Toe</h1>
-      <h1 class="displaywinner">Good Luck!</h1>
-      <h1 class="usernotification"></h1>
+      <header>
+        <h1 class="title">Greg's Tic Tac Toe</h1>
+        <h1 class="greeting">Good Luck!</h1>
+      </header>
+
+      <!-- Below gives updates to the user -->
+      <h1 class="authusernotification"></h1>
+
+      <!-- Below is the form pertaining to Sign Up -->
+
       <div class="signupdiv">
       <form class="signupform">
         <h3>Sign Up</h2>
@@ -36,8 +43,10 @@
     </label>
   </div>
   <button type="submitbutton" class="btn btn-default">Submit</button>
-</form>
+  </form>
 </div>
+
+<!-- Below is the form pertaining to Sign in -->
 <div class="signindiv">
 <form class="signinform">
   <h3>Sign In</h3>
@@ -57,6 +66,9 @@
 <button type="submitbutton" class="btn btn-default">Submit</button>
 </form>
 </div>
+
+<!-- Below is the form pertaining to Change Password -->
+
 <div class="changepassworddiv">
 <form class="changepasswordform">
   <h3>Change Password</h3>
@@ -74,6 +86,8 @@
 </form>
 </div>
 </div>
+
+<!-- Below is the form pertaining to Game Buttons (Sign Out, Create New, Get Total) -->
 <div class="gamebuttons">
 <div class="signoutdiv">
 <button type="button" id="signout">Sign Out</button>
@@ -85,9 +99,11 @@
 <button type="button" id="getwins">How many games have I won?!!</button>
 </div>
 </div>
-  <h1 class="user-message"></h1>
+
+<!-- Below is the Game Board -->
   <div class="container">
     <div id="game-board">
+    <h1 class="usernotification"></h1>
     <div class="row">
       <div id = "box1" class="col-4 box blue"></div>
       <div id = "box2" class="col-4 box blue"></div>

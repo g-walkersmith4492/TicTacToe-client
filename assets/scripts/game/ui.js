@@ -1,13 +1,13 @@
 const store = require('../store')
-
+const events = require('./events')
 const onSignUpSuccess = (responseData) => {
   console.log(responseData)
-  $('.signupform').css('visibility', 'hidden')
-  $('.usernotification').text('You have succesfully signed up!')
+  $('.authusernotification').text('You have succesfully signed up!')
+  $('.signinform').css('visibility', 'visible')
 }
 
 const onSignUpFailure = () => {
-  $('.usernotification').text('Error on sign up!')
+  $('.authusernotification').text('Error on sign up!')
 }
 
 const onSignInSuccess = (responseData) => {
@@ -16,51 +16,47 @@ const onSignInSuccess = (responseData) => {
   $('.gamebuttons').css('visibility', 'visible')
   $('.signinform').css('visibility', 'hidden')
   $('.signupform').css('visibility', 'hidden')
-  $('.usernotification').text('You have succesfully signed in!')
+  $('.authusernotification').text('You have succesfully signed in!')
   $('.changepasswordform').css('visibility', 'visible')
 }
 
 const onSignInFailure = () => {
-  $('.usernotification').text('Error on sign in!!')
+  $('.authusernotification').text('Error on sign in!!')
 }
 
 const onChangePasswordSuccess = () => {
-  $('.usernotification').text('You have succesfully changed your password!')
+  $('.authusernotification').text('You have succesfully changed your password!')
+  $('.changepasswordform').css('visibility', 'hidden')
 }
 
 const onChangePasswordFailure = () => {
-  $('.usernotification').text('Error on Change Password')
+  $('.authusernotification').text('Error on Change Password')
 }
 
 const onSignOutSuccess = () => {
   store.user = null
-  $('.usernotification').text('You have successfully signed out!!').css('color', 'green')
-  console.log('Store is', store)
+  $('.authusernotification').text('You have successfully signed out!!').css('color', 'green')
   $('.gamebuttons').css('visibility', 'hidden')
   $('.signinform').css('visibility', 'visible')
-  $('.usernotification').text('You have succesfully signed out!')
-  $('.changepassworddiv').css('visibility', 'hidden')
+  $('.changepasswordform').css('visibility', 'hidden')
   $('.signupform').css('visibility', 'visible')
   $('.box').css('visibility', 'hidden')
+  $('.usernotification').css('visibility', 'hidden')
 }
 
 const onSignOutFailure = () => {
-  $('.usernotificatione').text('Error on sign out').css('color', 'red')
+  $('.authusernotification').text('Error on sign out').css('color', 'red')
 }
 
 const onCreateGameSuccess = (responseData) => {
   console.log(responseData)
   store.game = responseData.game
-  $('.usernotification').text('You have created a game!')
   $('.box').css('visibility', 'visible')
+  $('.usernotification').css('visibility', 'visible')
 }
 
 const onCreateGameFailure = () => {
-  $('#user-message').text('Failure').css('color', 'red')
-}
-
-const onGetGamesSuccess = (responseData) => {
-  console.log(responseData)
+  $('.usernotification').text('Failure').css('color', 'red')
 }
 
 const onGetOverGamesSuccess = (responseData) => {
@@ -70,15 +66,10 @@ const onGetOverGamesSuccess = (responseData) => {
 }
 
 const onGetOverGamesFailure = (responseData) => {
-  console.log('failure')
-}
-
-const onGetGamesFailure = () => {
-  $('#user-message').text('Error').css('color', 'red')
+  $('.usernotification').text(`You have not won any games!`)
 }
 
 const onUpdateGameSuccess = (responseData) => {
-  console.log('Created Move!')
 }
 
 const onUpdateGameFailure = () => {
@@ -96,8 +87,6 @@ module.exports = {
   onSignOutFailure: onSignOutFailure,
   onCreateGameSuccess: onCreateGameSuccess,
   onCreateGameFailure: onCreateGameFailure,
-  onGetGamesSuccess: onGetGamesSuccess,
-  onGetGamesFailure: onGetGamesFailure,
   onUpdateGameSuccess: onUpdateGameSuccess,
   onUpdateGameFailure: onUpdateGameFailure,
   onGetOverGamesSuccess: onGetOverGamesSuccess,

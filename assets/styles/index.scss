@@ -7,14 +7,27 @@ $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
 
+header {
+   border-bottom: 1px solid black;
+   padding-bottom: 10px
+}
 body {
   background-color: $background-color;
   font-size: 36px;
   font-weight: 800;
 }
 
+.title {
+  font-family: fantasy;
+}
+
 h1 {
   text-align: center;
+}
+
+.greeting {
+  font-family: fantasy;
+  color: yellow;
 }
 
 .displaywinner {
@@ -84,7 +97,13 @@ h3 {
   visibility: visible;
 }
 
-.signupdiv, .signindiv, .changepassworddiv {
+.changepassworddiv {
+  float: right;
+  text-align: right;
+  margin: 0 20px;
+}
+
+.signupdiv, .signindiv {
   float: left;
   text-align: left;
   margin: 0 20px;

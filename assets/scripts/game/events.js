@@ -6,7 +6,6 @@ const store = require('../store')
 // Below is the function to sign up for the game
 const onSignUp = (event) => {
   event.preventDefault()
-  console.log('Successfully Sign Up')
   const formData = getFormFields(event.target)
   console.log(formData)
   api.signUp(formData)
@@ -19,9 +18,7 @@ const onSignUp = (event) => {
 
 const onSignIn = (event) => {
   event.preventDefault()
-  console.log('Successfully Sign In')
   const formData = getFormFields(event.target)
-
   api.signIn(formData)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
@@ -49,6 +46,7 @@ const onSignOut = (event) => {
 }
 
 const onCreateGame = (event) => {
+  $('.usernotification').text('Player X, it is your turn!')
   event.preventDefault()
   console.log('You have created a game!')
   api.createGame(playerMoves)
@@ -58,7 +56,6 @@ const onCreateGame = (event) => {
   playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   lastMove = null
   gameWinner = null
-  $('.displaywinner').html('New Game!!').css('color', 'black')
 }
 
 const onGetGames = (event) => {
@@ -106,7 +103,6 @@ const isGameOver = function () {
 const checkWinner = function () {
   if (playerMoves[0] === 'X' && playerMoves[1] === 'X' && playerMoves[2] === 'X') {
     gameWinner = playerOne
-    $('h2').html('Player One Wins!')
   } else if (playerMoves[0] === 'O' && playerMoves[1] === 'O' && playerMoves[2] === 'O') {
     gameWinner = playerTwo
   } else if (playerMoves[3] === 'X' && playerMoves[4] === 'X' && playerMoves[5] === 'X') {
@@ -138,9 +134,9 @@ const checkWinner = function () {
   } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
     gameWinner = playerTwo
   } if (gameWinner === playerOne) {
-    $('.displaywinner').html('Player One Wins!').css('color', 'green')
+    $('.usernotification').html('Player One Wins!').css('color', 'green')
   } else if (gameWinner === playerTwo) {
-    $('.displaywinner').html('Player Two Wins!').css('color', 'blue')
+    $('.usernotification').html('Player Two Wins!').css('color', 'blue')
   } isGameOver()
 }
 
@@ -362,6 +358,11 @@ const clickBoxNine = function (event) {
 }
 
 const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
+  if (lastMove === playerOne && gameWinner === null) {
+    $('.usernotification').text('Player O, it is your turn!')
+  } else if (lastMove === playerTwo && gameWinner === null) {
+    $('.usernotification').text('Player X, it is your turn!')
+  }
   console.log(isOver)
   console.log('You Have Created a Move!')
   const data =
@@ -396,5 +397,6 @@ module.exports = {
   onCreateGame: onCreateGame,
   onGetGames: onGetGames,
   onCreateMove: onCreateMove,
-  onGetOverGames: onGetOverGames
+  onGetOverGames: onGetOverGames,
+  lastMove: lastMove
 }
