@@ -1,6 +1,5 @@
 const store = require('../store')
 const onSignUpSuccess = (responseData) => {
-  console.log(responseData)
   $('.authusernotification').text('You have succesfully signed up!')
   $('.signinform').css('visibility', 'visible')
 }
@@ -10,7 +9,6 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (responseData) => {
-  console.log(responseData)
   store.user = responseData.user
   $('.gamebuttons').css('visibility', 'visible')
   $('.signinform').css('visibility', 'hidden')
@@ -48,7 +46,6 @@ const onSignOutFailure = () => {
 }
 
 const onCreateGameSuccess = (responseData) => {
-  console.log(responseData)
   store.game = responseData.game
   $('.box').css('visibility', 'visible')
   $('.usernotification').css('visibility', 'visible')
@@ -60,8 +57,6 @@ const onCreateGameFailure = () => {
 }
 
 const onGetOverGamesSuccess = (responseData) => {
-  console.log(responseData)
-  console.log(responseData.games.length)
   $('.totalgamesnotification').css('visibility', 'visible')
   $('.totalgamesnotification').text(`Player One has won  ${responseData.games.length} games (last time I checked)`)
 }
@@ -74,7 +69,6 @@ const onUpdateGameSuccess = (responseData) => {
 }
 
 const onUpdateGameFailure = () => {
-  console.log('Failure to create move!')
 }
 
 module.exports = {

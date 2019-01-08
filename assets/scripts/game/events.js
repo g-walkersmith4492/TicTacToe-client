@@ -1,13 +1,11 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const store = require('../store')
 
 // Below is the function to sign up for the game
 const onSignUp = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
@@ -28,9 +26,7 @@ const onSignIn = (event) => {
 // Below is the function to change the user's password
 const onChangePassword = (event) => {
   event.preventDefault()
-  console.log('Successfully Changed Password')
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.changePassword(formData)
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
@@ -39,7 +35,6 @@ const onChangePassword = (event) => {
 
 const onSignOut = (event) => {
   event.preventDefault()
-  console.log('Successfully Signed Out')
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
@@ -48,7 +43,6 @@ const onSignOut = (event) => {
 const onCreateGame = (event) => {
   $('.usernotification').text('Player X, it is your turn!')
   event.preventDefault()
-  console.log('You have created a game!')
   api.createGame(playerMoves)
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
@@ -363,8 +357,6 @@ const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
   } else if (lastMove === playerTwo && gameWinner === null) {
     $('.usernotification').text('Player X, it is your turn!')
   }
-  console.log(isOver)
-  console.log('You Have Created a Move!')
   const data =
   {
     'game': {
