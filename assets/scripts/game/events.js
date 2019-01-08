@@ -375,7 +375,7 @@ const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
       'over': isOver
     }
   }
-  if (playerMoves.includes(0) === false) {
+  if (playerMoves.includes(0) === false && gameWinner === null) {
     $('.usernotification').text('It is a draw!')
   }
   api.updateGame(data)
