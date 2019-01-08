@@ -70,6 +70,16 @@ const updateGame = (data) => {
   })
 }
 
+const getGamesOver = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp: signUp,
   signIn: signIn,
@@ -77,5 +87,6 @@ module.exports = {
   signOut: signOut,
   createGame: createGame,
   getGames: getGames,
-  updateGame: updateGame
+  updateGame: updateGame,
+  getGamesOver: getGamesOver
 }

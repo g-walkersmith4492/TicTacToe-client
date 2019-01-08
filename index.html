@@ -14,8 +14,10 @@
     <body>
       <h1>Greg's Tic Tac Toe</h1>
       <h1 class="displaywinner">Good Luck!</h1>
+      <h1 class="usernotification"></h1>
       <div class="signupdiv">
       <form class="signupform">
+        <h3>Sign Up</h2>
   <div class="form-group">
     <label for="exampleInputEmailSignUp1">Email address</label>
     <input type="email" class="form-control" name="credentials[email]" id="exampleInputEmailSignIn1" placeholder="Email">
@@ -38,6 +40,7 @@
 </div>
 <div class="signindiv">
 <form class="signinform">
+  <h3>Sign In</h3>
 <div class="form-group">
 <label for="exampleInputEmailSignIn1">Email address</label>
 <input type="email" class="form-control" name="credentials[email]" id="exampleInputEmailSignUp1" placeholder="Email">
@@ -56,6 +59,7 @@
 </div>
 <div class="changepassworddiv">
 <form class="changepasswordform">
+  <h3>Change Password</h3>
 <div class="form-group">
 <label for="exampleInputEmailSignIn1">Old Password</label>
 <input type="password" class="form-control" name="passwords[old]" id="exampleIChangePasswordOld1" placeholder="Old Password">
@@ -65,24 +69,25 @@
 <input type="password" class="form-control" name="passwords[new]" id="exampleChangePasswordNewUp1" placeholder="New Password">
 </div>
 <div class="checkbox">
-<label>
-<input type="checkbox"> Check me out
-</label>
-</div>
+</div>>
 <button type="submitbutton" class="btn btn-default">Submit</button>
 </form>
 </div>
+</div>
+<div class="gamebuttons">
 <div class="signoutdiv">
 <button type="button" id="signout">Sign Out</button>
 </div>
 <div class="creategamediv">
-<button type="button" id="creategame">Start Game!</button>
+<button type="button" id="creategame">Create a New Game!!</button>
 </div>
-<div class="getgamesdiv">
-<button type="button" id="getgames">Your Game History!!</button>
+<div class="getwinsdiv">
+<button type="button" id="getwins">How many games have I won?!!</button>
 </div>
-  <h1 #class="user-message"></h1>
+</div>
+  <h1 class="user-message"></h1>
   <div class="container">
+    <div id="game-board">
     <div class="row">
       <div id = "box1" class="col-4 box blue"></div>
       <div id = "box2" class="col-4 box blue"></div>
@@ -99,8 +104,8 @@
       <div id = "box9" class="col-4 box blue"></div>
     </div>
   </div>
-<div class ="buttons">
-  <button id="refresh">Refresh</button>
+  </div>
+<div class ="gamehistory">
 </div>
 </body>
 </html>

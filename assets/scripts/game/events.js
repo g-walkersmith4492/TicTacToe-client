@@ -68,6 +68,13 @@ const onGetGames = (event) => {
     .catch(ui.onGetGamesFailure)
 }
 
+const onGetOverGames = (event) => {
+  event.preventDefault()
+  api.getGamesOver()
+    .then(ui.onGetOverGamesSuccess)
+    .catch(ui.onGetOverGamesFailure)
+}
+
 // board array which stores player moves and sends to API
 let playerMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 const playerOne = 'X'
@@ -79,11 +86,11 @@ let lastMove = null
 let isOver = false
 
 const isGameOver = function () {
-  if (gameWinner !== null || playerMoves.includes(0) === false) {
+  if (gameWinner === playerOne) {
     isOver = true
   } else {
     isOver = false
-  } console.log(isOver)
+  }
 }
 
 // This is the function for the resfresh button, which clears the board
@@ -134,14 +141,10 @@ const checkWinner = function () {
     $('.displaywinner').html('Player One Wins!').css('color', 'green')
   } else if (gameWinner === playerTwo) {
     $('.displaywinner').html('Player Two Wins!').css('color', 'blue')
-  } if (gameWinner !== null || playerMoves.includes(0) === false) {
-    isOver = true
-  } else {
-    isOver = false
-  }
+  } isGameOver()
 }
 
-const clickBoxOne = $('#box1').on('click', function (event) {
+const clickBoxOne = function (event) {
   if (gameWinner === null) {
     if ($('#box1').html() === '') {
       if (lastMove === playerOne) {
@@ -163,9 +166,9 @@ const clickBoxOne = $('#box1').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxTwo = $('#box2').on('click', function (event) {
+const clickBoxTwo = function (event) {
   if (gameWinner === null) {
     if ($('#box2').html() === '') {
       if (lastMove === playerOne) {
@@ -188,9 +191,9 @@ const clickBoxTwo = $('#box2').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxThree = $('#box3').on('click', function (event) {
+const clickBoxThree = function (event) {
   if (gameWinner === null) {
     if ($('#box3').html() === '') {
       if (lastMove === playerOne) {
@@ -212,9 +215,9 @@ const clickBoxThree = $('#box3').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxFour = $('#box4').on('click', function (event) {
+const clickBoxFour = function (event) {
   if (gameWinner === null) {
     if ($('#box4').html() === '') {
       if (lastMove === playerOne) {
@@ -236,9 +239,9 @@ const clickBoxFour = $('#box4').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxFive = $('#box5').on('click', function (event) {
+const clickBoxFive = function (event) {
   if (gameWinner === null) {
     if ($('#box5').html() === '') {
       if (lastMove === playerOne) {
@@ -260,9 +263,9 @@ const clickBoxFive = $('#box5').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxSix = $('#box6').on('click', function (event) {
+const clickBoxSix = function (event) {
   if (gameWinner === null) {
     if ($('#box6').html() === '') {
       if (lastMove === playerOne) {
@@ -284,9 +287,9 @@ const clickBoxSix = $('#box6').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxSeven = $('#box7').on('click', function (event) {
+const clickBoxSeven = function (event) {
   if (gameWinner === null) {
     if ($('#box7').html() === '') {
       if (lastMove === playerOne) {
@@ -308,9 +311,9 @@ const clickBoxSeven = $('#box7').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxEight = $('#box8').on('click', function (event) {
+const clickBoxEight = function (event) {
   if (gameWinner === null) {
     if ($('#box8').html() === '') {
       if (lastMove === playerOne) {
@@ -332,9 +335,9 @@ const clickBoxEight = $('#box8').on('click', function (event) {
       }
     }
   }
-})
+}
 
-const clickBoxNine = $('#box9').on('click', function (event) {
+const clickBoxNine = function (event) {
   if (gameWinner === null) {
     if ($('#box9').html() === '') {
       if (lastMove === playerOne) {
@@ -356,7 +359,7 @@ const clickBoxNine = $('#box9').on('click', function (event) {
       }
     }
   }
-})
+}
 
 const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
   console.log(isOver)
@@ -386,12 +389,12 @@ module.exports = {
   clickBoxSeven: clickBoxSeven,
   clickBoxEight: clickBoxEight,
   clickBoxNine: clickBoxNine,
-  // refreshGame: refreshGame,
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
   onCreateGame: onCreateGame,
   onGetGames: onGetGames,
-  onCreateMove: onCreateMove
+  onCreateMove: onCreateMove,
+  onGetOverGames: onGetOverGames
 }
