@@ -1,5 +1,4 @@
 const store = require('../store')
-const events = require('./events')
 const onSignUpSuccess = (responseData) => {
   console.log(responseData)
   $('.authusernotification').text('You have succesfully signed up!')
@@ -26,7 +25,6 @@ const onSignInFailure = () => {
 
 const onChangePasswordSuccess = () => {
   $('.authusernotification').text('You have succesfully changed your password!')
-  $('.changepasswordform').css('visibility', 'hidden')
 }
 
 const onChangePasswordFailure = () => {
@@ -42,6 +40,7 @@ const onSignOutSuccess = () => {
   $('.signupform').css('visibility', 'visible')
   $('.box').css('visibility', 'hidden')
   $('.usernotification').css('visibility', 'hidden')
+  $('.totalgamesnotification').css('visibility', 'hidden')
 }
 
 const onSignOutFailure = () => {
@@ -53,6 +52,7 @@ const onCreateGameSuccess = (responseData) => {
   store.game = responseData.game
   $('.box').css('visibility', 'visible')
   $('.usernotification').css('visibility', 'visible')
+  $('.totalgamesnotification').css('visibility', 'visible')
 }
 
 const onCreateGameFailure = () => {
@@ -62,7 +62,8 @@ const onCreateGameFailure = () => {
 const onGetOverGamesSuccess = (responseData) => {
   console.log(responseData)
   console.log(responseData.games.length)
-  $('.usernotification').text(`You have won ${responseData.games.length} games!`)
+  $('.totalgamesnotification').css('visibility', 'visible')
+  $('.totalgamesnotification').text(`Player One has won  ${responseData.games.length} games (last time I checked)`)
 }
 
 const onGetOverGamesFailure = (responseData) => {

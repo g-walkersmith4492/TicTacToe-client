@@ -358,7 +358,7 @@ const clickBoxNine = function (event) {
 }
 
 const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
-  if (lastMove === playerOne && gameWinner === null) {
+  if (lastMove === playerOne && gameWinner === null && playerMoves.includes(0) === true) {
     $('.usernotification').text('Player O, it is your turn!')
   } else if (lastMove === playerTwo && gameWinner === null) {
     $('.usernotification').text('Player X, it is your turn!')
@@ -366,16 +366,18 @@ const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
   console.log(isOver)
   console.log('You Have Created a Move!')
   const data =
-    {
-      'game': {
-        'cell': {
-          'index': playerMoveData,
-          'value': playerGameCharacter
-        },
-        'over': isOver
-      }
+  {
+    'game': {
+      'cell': {
+        'index': playerMoveData,
+        'value': playerGameCharacter
+      },
+      'over': isOver
     }
-  console.log(data)
+  }
+  if (playerMoves.includes(0) === false) {
+    $('.usernotification').text('It is a draw!')
+  }
   api.updateGame(data)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)
