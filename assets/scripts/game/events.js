@@ -43,7 +43,7 @@ const onSignOut = (event) => {
 }
 
 const onCreateGame = (event) => {
-  $('.usernotification').text('Player X, it is your turn!')
+  $('.usernotification').text('Player One (X), it is your turn!')
   event.preventDefault()
   api.createGame(playerMoves)
     .then(ui.onCreateGameSuccess)
@@ -355,9 +355,9 @@ const clickBoxNine = function (event) {
 
 const onCreateMove = (playerMoveData, playerGameCharacter, isOver) => {
   if (lastMove === playerOne && gameWinner === null && playerMoves.includes(0) === true) {
-    $('.usernotification').text('Player O, it is your turn!')
+    $('.usernotification').text('Player Two - O, it is your turn!')
   } else if (lastMove === playerTwo && gameWinner === null) {
-    $('.usernotification').text('Player X, it is your turn!')
+    $('.usernotification').text('Player One - X, it is your turn!')
   }
   const data =
   {
