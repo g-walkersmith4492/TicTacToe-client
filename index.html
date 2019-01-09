@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+        <img class="galogo" src="public/GA_logo.png" alt="GA logo">
+        <h1 class="mainheader">Greg's Tic Tac Toe</h1>
+        <!-- Below is the form pertaining to Game Buttons (Sign Out, Create New, Get Total) -->
+        <nav class="navbuttons">
+        <button type="button" id="signoutbutton">Sign Out</button>
+        <button type="button" id="creategamebutton">Create a New Game!!</button>
+        <button type="button" id="getwinsbutton">How Many Games Player X Has Won!!</button>
+        </nav>
+      </header>
+      <section>
+      <div class="pagebody">
+      <!-- Below gives updates to the user -->
+      <h1 class="authusernotification"></h1>
+
+      <!-- Below is the form pertaining to Sign Up -->
+<div class="pageone text-center">
+      <div class="signupdiv">
+      <form class="signupform">
+        <h3>Sign Up</h2>
+  <div class="form-group">
+    <label for="exampleInputEmailSignUp1">Email address</label>
+    <input type="email" class="form-control" name="credentials[email]" id="exampleInputEmailSignIn1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPasswordSignUp1">Password</label>
+    <input type="password" class="form-control" name="credentials[password]" id="exampleInputPasswordSignIn1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleConfirmPassword1">Confirm Password</label>
+    <input type="password" class="form-control" name="credentials[password_confirmation]" id="exampleConfirmationPassword1" placeholder="Password Confirmation">
+  </div>
+  <button type="submitbutton" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+<!-- Below is the form pertaining to Sign in -->
+<div class="signindiv">
+<form class="signinform">
+  <h3>Sign In</h3>
+<div class="form-group">
+<label for="exampleInputEmailSignIn1">Email address</label>
+<input type="email" class="form-control" name="credentials[email]" id="exampleInputEmailSignUp1" placeholder="Email">
+</div>
+<div class="form-group">
+<label for="exampleInputPasswordSignIn1">Password</label>
+<input type="password" class="form-control" name="credentials[password]" id="exampleInputPasswordSignUp1" placeholder="Password">
+</div>
+<button type="submitbutton" class="btn btn-default">Submit</button>
+</form>
+</div>
+</div>
+<!-- Below is the form pertaining to Change Password -->
+<div class="pagetwo">
+<div class="changepassworddiv">
+<form class="changepasswordform">
+  <h3>Change Password</h3>
+<div class="form-group">
+<label for="exampleInputEmailSignIn1">Old Password</label>
+<input type="password" class="form-control" name="passwords[old]" id="exampleIChangePasswordOld1" placeholder="Old Password">
+</div>
+<div class="form-group">
+<label for="exampleInputPasswordSignIn1">New Password</label>
+<input type="password" class="form-control" name="passwords[new]" id="exampleChangePasswordNewUp1" placeholder="New Password">
+<button type="submitbutton" class="btn btn-default">Submit</button>
+</form>
+</div>
+</div>
+<!-- Below is the Game Board -->
+  <div id="game-board" class="container-fluid">
+      <div class="row">
+        <div class="col">
+    <h1 class="usernotification"></h1>
+    <h3 class="totalgamesnotification text-center"></h4>
+  </div>
+</div>
+    <div class="row">
+      <div id = "box1" class="col-4 box blue"></div>
+      <div id = "box2" class="col-4 box blue"></div>
+      <div id = "box3" class="col-4 box blue"></div>
+    </div>
+    <div class="row">
+      <div id = "box4"class="col-4 box white"></div>
+      <div id = "box5"class="col-4 box blue"></div>
+      <div id = "box6"class="col-4 box blue"></div>
+    </div>
+    <div class="row">
+      <div id = "box7" class="col-4 box blue"></div>
+      <div id = "box8" class="col-4 box blue"></div>
+      <div id = "box9" class="col-4 box blue"></div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+</body>
+</html>
