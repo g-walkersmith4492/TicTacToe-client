@@ -2,13 +2,14 @@
 
 ## List of Technologies used during this project:
 
+- JavaScript
+- jQuery
 - HTML
 - CSS
 - Bootstrap
-- Javascript
+- Sass
 - jQuery
 - ajax
-- Sass
 - API
 
 ## Wireframe and User Stories:
@@ -34,7 +35,7 @@ The first step of my planning was to create a wireframe.  This was created on a 
 
 I started the project by focusing on my game logic, primarily using JavaScript, as I figured I would have an easier time with this than connecting to the API.  After finishing my logic, I speant the majority of my time working on connecting to the API.  Eventually, I was able to send and receive all necessary information to sign in/sign up/change password, as well as retrieve how many games in total Player One had won.
 
-My best problem solving strategy was talking to other members of my cohort, submitting issues, and looking at other people's issues.  Often times, others had the same issue as I did, and looking at the advice from instructors was easier than opening up an issue myself.  
+My best problem solving strategy was talking to other members of my cohort, submitting issues, and looking at other people's issues.  Often times, others had the same issue as I did, and looking at the advice from instructors was easier than opening up an issue myself.
 
 ## Unsolved Problems/Future Plans:
 
