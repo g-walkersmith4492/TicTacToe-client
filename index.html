@@ -15,8 +15,15 @@
       <header>
         <h1 class="title">Greg's Tic Tac Toe</h1>
         <h1 class="greeting">Good Luck!</h1>
+        <!-- Below is the form pertaining to Game Buttons (Sign Out, Create New, Get Total) -->
+        <nav class="navbuttons">
+        <button type="button" id="signoutbutton">Sign Out</button>
+        <button type="button" id="creategamebutton">Create a New Game!!</button>
+        <button type="button" id="getwinsbutton">How many games have I won?!!</button>
+        </nav>
       </header>
-
+      <section>
+      <div class="pagebody">
       <!-- Below gives updates to the user -->
       <h1 class="authusernotification"></h1>
 
@@ -37,11 +44,6 @@
     <label for="exampleConfirmPassword1">Confirm Password</label>
     <input type="passworconfirm" class="form-control" name="credentials[password_confirmation]" id="exampleConfirmationPassword1" placeholder="Password Confirmation">
   </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
   <button type="submitbutton" class="btn btn-default">Submit</button>
   </form>
 </div>
@@ -58,17 +60,11 @@
 <label for="exampleInputPasswordSignIn1">Password</label>
 <input type="password" class="form-control" name="credentials[password]" id="exampleInputPasswordSignUp1" placeholder="Password">
 </div>
-<div class="checkbox">
-<label>
-<input type="checkbox"> Check me out
-</label>
-</div>
 <button type="submitbutton" class="btn btn-default">Submit</button>
 </form>
 </div>
 
 <!-- Below is the form pertaining to Change Password -->
-
 <div class="changepassworddiv">
 <form class="changepasswordform">
   <h3>Change Password</h3>
@@ -79,27 +75,10 @@
 <div class="form-group">
 <label for="exampleInputPasswordSignIn1">New Password</label>
 <input type="password" class="form-control" name="passwords[new]" id="exampleChangePasswordNewUp1" placeholder="New Password">
-</div>
-<div class="checkbox">
-</div>>
 <button type="submitbutton" class="btn btn-default">Submit</button>
 </form>
 </div>
 </div>
-
-<!-- Below is the form pertaining to Game Buttons (Sign Out, Create New, Get Total) -->
-<div class="gamebuttons">
-<div class="signoutdiv">
-<button type="button" id="signout">Sign Out</button>
-</div>
-<div class="creategamediv">
-<button type="button" id="creategame">Create a New Game!!</button>
-</div>
-<div class="getwinsdiv">
-<button type="button" id="getwins">How many games have I won?!!</button>
-</div>
-</div>
-
 <!-- Below is the Game Board -->
   <div class="container">
     <div id="game-board">
@@ -122,7 +101,7 @@
     </div>
   </div>
   </div>
-<div class ="gamehistory">
 </div>
+</section>
 </body>
 </html>

@@ -8,14 +8,25 @@ $teal: rgb(0, 156, 161);
 $black: #000;
 
 header {
-   border-bottom: 1px solid black;
-   padding-bottom: 10px
+   padding-bottom: 10px;
+   font-family: sans-serif;
+   color: black;
 }
+
 body {
-  background-image: url('public/trees_yeah.png');
   background-size: cover;
   font-size: 36px;
   font-weight: 800;
+  color: black;
+}
+
+section {
+  padding: 10px;
+  background-image: url('public/new-ga-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  color: black;
 }
 
 // .pagebody {
@@ -23,18 +34,8 @@ body {
 //   justify-content: center;
 // }
 
-.title {
-  font-family: fantasy;
-}
-
 h1 {
   text-align: center;
-}
-
-.greeting {
-  font-family: fantasy;
-  color: white;
-  outline-color: black;
 }
 
 .displaywinner {
@@ -62,12 +63,16 @@ h3 {
 
 .box {
   align-items: center;
-  border: 5px solid white;
-  color: $font-color;
+  border: 1px solid white;
+  color: white;
   display: flex;
-  height: 100px;
+  height: 150px;
   width: auto;
   justify-content: center;
+  background-image: url('public/tictactoe_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 
 .grey {
@@ -123,7 +128,7 @@ div#game-board {
 
 .changepasswordform {
   height: 300px;
-  width: 400px;
+  width: 300px;
   font-size: 12px;
   margin: 20px;
   border: 1px solid $black;

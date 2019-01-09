@@ -8,10 +8,12 @@ $('.usernotification').show()
 const onSignUpSuccess = (responseData) => {
   $('.authusernotification').text('You have succesfully signed up!')
   $('.signinform').show()
+  $('.signinform').trigger('reset')
 }
 
 const onSignUpFailure = () => {
   $('.authusernotification').text('Error on sign up!')
+  $('.signinform').trigger('reset')
 }
 
 const onSignInSuccess = (responseData) => {
@@ -19,13 +21,15 @@ const onSignInSuccess = (responseData) => {
   $('.navbuttons').show()
   $('.signinform').hide()
   $('.signupform').hide()
-  $('.authusernotification').text('Click Create a New Game to Start!!')
+  $('.authusernotification').text('Signed in!  Click Create a New Game to Start!!')
   $('.changepasswordform').show()
   $('.changepasswordform').trigger('reset')
+  $('.signupform').trigger('reset')
 }
 
 const onSignInFailure = () => {
   $('.authusernotification').text('Error on sign in!!')
+  $('.signupform').trigger('reset')
 }
 
 const onChangePasswordSuccess = () => {
@@ -38,7 +42,7 @@ const onChangePasswordFailure = () => {
 
 const onSignOutSuccess = () => {
   store.user = null
-  $('.authusernotification').text('You have successfully signed out!!').css('color', 'green')
+  $('.authusernotification').text('You have successfully signed out!!')
   $('.navbuttons').hide()
   $('.signinform').show()
   $('.changepasswordform').hide()
@@ -49,7 +53,7 @@ const onSignOutSuccess = () => {
 }
 
 const onSignOutFailure = () => {
-  $('.authusernotification').text('Error on sign out').css('color', 'red')
+  $('.authusernotification').text('Error on sign out')
 }
 
 const onCreateGameSuccess = (responseData) => {

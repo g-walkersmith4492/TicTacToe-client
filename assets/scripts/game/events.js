@@ -130,9 +130,9 @@ const checkWinner = function () {
   } else if (playerMoves[2] === 'O' && playerMoves[4] === 'O' && playerMoves[6] === 'O') {
     gameWinner = playerTwo
   } if (gameWinner === playerOne) {
-    $('.usernotification').html('Player One Wins!').css('color', 'green')
+    $('.usernotification').html('Player One Wins!').css('color', 'white')
   } else if (gameWinner === playerTwo) {
-    $('.usernotification').html('Player Two Wins!').css('color', 'blue')
+    $('.usernotification').html('Player Two Wins!').css('color', 'white')
   } isGameOver()
 }
 
