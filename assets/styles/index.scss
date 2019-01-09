@@ -12,11 +12,17 @@ $black: #000;
     display: flex;
     flex-direction: column;
   }
+
   .pagetwo {
     display: flex;
     flex-direction: column;
   }
+
+  .authusernotification {
+    margin-top: 100px;
+  }
 }
+
 
 header {
 
@@ -161,10 +167,6 @@ button {
 .signupdiv, .signindiv {
   text-align: left;
   margin: 0 20px;
-}
-
-.gamebuttons {
-  clear: both;
 }
 
 div#game-board {
