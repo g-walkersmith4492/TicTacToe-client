@@ -69,7 +69,7 @@ const onCreateGameFailure = () => {
 
 const onGetOverGamesSuccess = (responseData) => {
   $('.totalgamesnotification').show()
-  $('.totalgamesnotification').text(`Player X has won  ${responseData.games.length} games!`)
+  $('.totalgamesnotification').text(`Player One (X) has won  ${responseData.games.length} games!`)
 }
 
 const onGetOverGamesFailure = (responseData) => {
