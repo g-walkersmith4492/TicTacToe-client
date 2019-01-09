@@ -7,12 +7,30 @@ $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
 
+
+
 header {
+
    padding-bottom: 10px;
-   font-family: sans-serif;
-   color: black;
+   font-family: 'Fredericka the Great', cursive;
+   background-image: url('public/chalkboardtwo.jpg');
+   background-size: cover;
+   color: white;
+   border-bottom: 1px solid white;
+   height: 100px;
 }
 
+.galogo {
+  height: 100px;
+  width: auto;
+  float: left;
+  clear: none;
+}
+
+.container {
+  height: 600px;
+  width: auto;
+}
 body {
   background-size: cover;
   font-size: 36px;
@@ -29,10 +47,6 @@ section {
   color: black;
 }
 
-// .pagebody {
-//   display: flex;
-//   justify-content: center;
-// }
 
 h1 {
   text-align: center;
@@ -53,11 +67,20 @@ h2 {
 
 h3 {
   text-align: center;
-  color: blue;
+  color: black;
 }
 
 .navbuttons {
   font-size: 16px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+button {
+  border-radius: 8px;
+  padding: 3px;
+  margin: 5px
 }
 
 
@@ -75,13 +98,6 @@ h3 {
   background-position: bottom right;
 }
 
-.grey {
-  background-color: $grey;
-}
-
-.teal {
-  background-color: $teal;
-}
 
 .signupform {
   height: 400px;

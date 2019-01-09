@@ -6,7 +6,7 @@ $('.navbuttons').hide()
 $('.usernotification').show()
 
 const onSignUpSuccess = (responseData) => {
-  $('.authusernotification').text('You have succesfully signed up!')
+  $('.authusernotification').text('You have successfully signed up!')
   $('.signinform').show()
   $('.signinform').trigger('reset')
 }
