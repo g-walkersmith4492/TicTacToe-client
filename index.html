@@ -29,7 +29,7 @@
       <h1 class="authusernotification"></h1>
 
       <!-- Below is the form pertaining to Sign Up -->
-
+<div class="pageone text-center">
       <div class="signupdiv">
       <form class="signupform">
         <h3>Sign Up</h2>
@@ -43,7 +43,7 @@
   </div>
   <div class="form-group">
     <label for="exampleConfirmPassword1">Confirm Password</label>
-    <input type="passworconfirm" class="form-control" name="credentials[password_confirmation]" id="exampleConfirmationPassword1" placeholder="Password Confirmation">
+    <input type="password" class="form-control" name="credentials[password_confirmation]" id="exampleConfirmationPassword1" placeholder="Password Confirmation">
   </div>
   <button type="submitbutton" class="btn btn-default">Submit</button>
   </form>
@@ -64,8 +64,9 @@
 <button type="submitbutton" class="btn btn-default">Submit</button>
 </form>
 </div>
-
+</div>
 <!-- Below is the form pertaining to Change Password -->
+<div class="pagetwo">
 <div class="changepassworddiv">
 <form class="changepasswordform">
   <h3>Change Password</h3>
@@ -81,10 +82,13 @@
 </div>
 </div>
 <!-- Below is the Game Board -->
-  <div class="container">
-    <div id="game-board">
+  <div id="game-board" class="container-fluid">
+      <div class="row">
+        <div class="col">
     <h1 class="usernotification"></h1>
-    <h3 class="totalgamesnotification"></h3>
+    <h3 class="totalgamesnotification text-center"></h4>
+  </div>
+</div>
     <div class="row">
       <div id = "box1" class="col-4 box blue"></div>
       <div id = "box2" class="col-4 box blue"></div>

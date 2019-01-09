@@ -16,6 +16,7 @@ header {
    background-image: url('public/chalkboardtwo.jpg');
    background-size: cover;
    color: white;
+   text-shadow: 1px 0 0;
    border-bottom: 1px solid white;
    height: 100px;
 }
@@ -43,17 +44,29 @@ section {
   background-image: url('public/new-ga-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top right;
   color: black;
+  min-height: 100vh;
 }
 
+.pageone {
+  display: flex;
+}
+.pagetwo {
+  display: flex;
+
+}
 
 h1 {
   text-align: center;
+  color: white;
 }
 
 .displaywinner {
   color: black;
+}
+
+.totalgamesnotification {
+  color: blue;
 }
 
 .formdiv {
@@ -67,7 +80,12 @@ h2 {
 
 h3 {
   text-align: center;
-  color: black;
+  color: white;
+
+}
+
+h4 {
+  color: blue;
 }
 
 .navbuttons {
@@ -93,9 +111,9 @@ button {
   width: auto;
   justify-content: center;
   background-image: url('public/tictactoe_background.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: center;
 }
 
 
