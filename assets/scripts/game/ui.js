@@ -1,7 +1,13 @@
 const store = require('../store')
+
+$('.changepasswordform').hide()
+$('.box').hide()
+$('.navbuttons').hide()
+$('.usernotification').show()
+
 const onSignUpSuccess = (responseData) => {
   $('.authusernotification').text('You have succesfully signed up!')
-  $('.signinform').css('visibility', 'visible')
+  $('.signinform').show()
 }
 
 const onSignUpFailure = () => {
@@ -10,11 +16,12 @@ const onSignUpFailure = () => {
 
 const onSignInSuccess = (responseData) => {
   store.user = responseData.user
-  $('.gamebuttons').css('visibility', 'visible')
-  $('.signinform').css('visibility', 'hidden')
-  $('.signupform').css('visibility', 'hidden')
-  $('.authusernotification').text('You have succesfully signed in!')
-  $('.changepasswordform').css('visibility', 'visible')
+  $('.navbuttons').show()
+  $('.signinform').hide()
+  $('.signupform').hide()
+  $('.authusernotification').text('Click Create a New Game to Start!!')
+  $('.changepasswordform').show()
+  $('.changepasswordform').trigger('reset')
 }
 
 const onSignInFailure = () => {
@@ -32,13 +39,13 @@ const onChangePasswordFailure = () => {
 const onSignOutSuccess = () => {
   store.user = null
   $('.authusernotification').text('You have successfully signed out!!').css('color', 'green')
-  $('.gamebuttons').css('visibility', 'hidden')
-  $('.signinform').css('visibility', 'visible')
-  $('.changepasswordform').css('visibility', 'hidden')
-  $('.signupform').css('visibility', 'visible')
-  $('.box').css('visibility', 'hidden')
-  $('.usernotification').css('visibility', 'hidden')
-  $('.totalgamesnotification').css('visibility', 'hidden')
+  $('.navbuttons').hide()
+  $('.signinform').show()
+  $('.changepasswordform').hide()
+  $('.signupform').show()
+  $('.box').hide()
+  $('.usernotification').hide()
+  $('.totalgamesnotification').hide()
 }
 
 const onSignOutFailure = () => {
@@ -47,9 +54,9 @@ const onSignOutFailure = () => {
 
 const onCreateGameSuccess = (responseData) => {
   store.game = responseData.game
-  $('.box').css('visibility', 'visible')
-  $('.usernotification').css('visibility', 'visible')
-  $('.totalgamesnotification').css('visibility', 'visible')
+  $('.box').show()
+  $('.usernotification').show()
+  $('.totalgamesnotification').hide()
 }
 
 const onCreateGameFailure = () => {
@@ -57,8 +64,8 @@ const onCreateGameFailure = () => {
 }
 
 const onGetOverGamesSuccess = (responseData) => {
-  $('.totalgamesnotification').css('visibility', 'visible')
-  $('.totalgamesnotification').text(`Player One has won  ${responseData.games.length} games (last time I checked)`)
+  $('.totalgamesnotification').show()
+  $('.totalgamesnotification').text(`Player X has won  ${responseData.games.length} games!`)
 }
 
 const onGetOverGamesFailure = (responseData) => {

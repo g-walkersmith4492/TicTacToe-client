@@ -21,6 +21,7 @@ const onSignIn = (event) => {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
   $('.signinform').trigger('reset')
+  $('.changepasswordform').trigger('reset')
 }
 
 // Below is the function to change the user's password
@@ -38,6 +39,7 @@ const onSignOut = (event) => {
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
+  $('.changepasswordform').trigger('reset')
 }
 
 const onCreateGame = (event) => {

@@ -18,6 +18,11 @@ body {
   font-weight: 800;
 }
 
+// .pagebody {
+//   display: flex;
+//   justify-content: center;
+// }
+
 .title {
   font-family: fantasy;
 }
@@ -50,26 +55,19 @@ h3 {
   color: blue;
 }
 
-.buttons {
-  text-align: center;
-  margin: 20px auto;
+.navbuttons {
+  font-size: 16px;
 }
 
-.gamebuttons {
-  margin: 20px auto;
-  font-size: 18px;
-  visibility: hidden;
-}
 
 .box {
   align-items: center;
   border: 5px solid white;
   color: $font-color;
   display: flex;
-  height: 200px;
+  height: 100px;
   width: auto;
   justify-content: center;
-  visibility: hidden;
 }
 
 .grey {
@@ -87,6 +85,7 @@ h3 {
   margin: 20px auto;
   border: 1px solid $black;
   padding: 10px;
+  justify-content: center;
 }
 
 .signinform {
@@ -96,30 +95,29 @@ h3 {
   margin: 20px auto;
   border: 1px solid $black;
   padding: 10px;
-  visibility: visible;
+  justify-content: center;
 }
 
 .changepassworddiv {
-  float: right;
   text-align: right;
   margin: 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .signupdiv, .signindiv {
-  float: left;
   text-align: left;
   margin: 0 20px;
 }
 
 .gamebuttons {
-  float: left;
   clear: both;
 }
 
 div#game-board {
-    float: left;
     clear: both;
-    width: 100%;
+    width: 50%;
     margin-bottom: 10px;
 }
 
@@ -127,8 +125,7 @@ div#game-board {
   height: 300px;
   width: 400px;
   font-size: 12px;
-  margin: 20px auto;
+  margin: 20px;
   border: 1px solid $black;
   padding: 10px;
-  visibility: hidden;
 }
